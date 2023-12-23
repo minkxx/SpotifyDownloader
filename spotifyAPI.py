@@ -98,7 +98,7 @@ class songAPI:
 
 if __name__ == "__main__":   
     client = songAPI()
-    userUrl = input(": ")
+    userUrl = input("Enter any spotify link : ")
     isValid = client.checkUrl(userUrl)
     if isValid == "track":
         client.downloadTrack(str(userUrl))
