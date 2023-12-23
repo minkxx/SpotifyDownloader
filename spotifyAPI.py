@@ -1,7 +1,6 @@
 import spotipy
 import asyncio
 from spotipy.oauth2 import SpotifyClientCredentials
-from youtubesearchpython.__future__ import VideosSearch
 from pytube import Search
 from pytube import YouTube
 
@@ -96,17 +95,16 @@ class songAPI:
                 yt = YouTube(youtube_url)
                 stream =  yt.streams.filter(abr="128kbps")[0]
                 stream.download(output_path=f"songs/{playlistName}/")
-    
-client = songAPI()
 
-
-userUrl = input(": ")
-isValid = client.checkUrl(userUrl)
-if isValid == "track":
-    client.downloadTrack(str(userUrl))
-elif isValid == "album":
-    client.downloadAlbum(str(userUrl))
-elif isValid == "playlist":
-    client.downloadPlaylist(str(userUrl))
-else:
-    print("Invalid url")
+if __name__ == "__main__":   
+    client = songAPI()
+    userUrl = input(": ")
+    isValid = client.checkUrl(userUrl)
+    if isValid == "track":
+        client.downloadTrack(str(userUrl))
+    elif isValid == "album":
+        client.downloadAlbum(str(userUrl))
+    elif isValid == "playlist":
+        client.downloadPlaylist(str(userUrl))
+    else:
+        print("Invalid url")
