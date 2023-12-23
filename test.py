@@ -32,7 +32,3 @@ def removeMp4(file_path):
     for i in os.listdir(file_path):
         if str(i).endswith(".mp4"):
             os.remove(f"{file_path}{i}")
-    
-
-# afterDl("test/")
-removeMp4("test/")
