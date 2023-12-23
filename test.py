@@ -2,7 +2,7 @@ from pytube import YouTube, Search
 import os
 from moviepy.editor import *
 
-# s = Search("Despretion Talha Anjum")
+# s = Search("Despacito")
 # x = str(s.results[0]).split("=")
 # y = x[-1].split(">")
 # videoID = y[0]
@@ -16,12 +16,23 @@ def MP4ToMP3(mp4, mp3):
     FILETOCONVERT.write_audiofile(mp3)
     FILETOCONVERT.close()
 
+def afterDl(file_path):
+    for i  in os.listdir(file_path):
+        if str(i).endswith(".mp4"):
+            VIDEO_FILE_PATH = f"{file_path}{i}"
+            AUDIO_FILE_PATH = f"{file_path}{i}.mp3"
+            MP4ToMP3(VIDEO_FILE_PATH, AUDIO_FILE_PATH)
 
+    for i  in os.listdir(file_path):
+        x = str(i).split(".mp4")
+        if str(i).endswith(".mp4.mp3"):
+            os.rename(f"{file_path}{i}", f"{file_path}{x[0]}.mp3")
 
-for i  in os.listdir("test/"):
-    if str(i).endswith(".mp4"):
-        VIDEO_FILE_PATH = f"test/{i}"
-        AUDIO_FILE_PATH = f"test/{i}.mp3"
-        MP4ToMP3(VIDEO_FILE_PATH, AUDIO_FILE_PATH)
-        
+def removeMp4(file_path):
+    for i in os.listdir(file_path):
+        if str(i).endswith(".mp4"):
+            os.remove(f"{file_path}{i}")
     
+
+# afterDl("test/")
+removeMp4("test/")
