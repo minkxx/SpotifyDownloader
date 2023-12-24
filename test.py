@@ -42,24 +42,23 @@ from eyed3.id3.frames import ImageFrame
 #             os.remove(f"{file_path}{i}")
 
 
-client_id = config.SPOTIFY_CLIENT_ID
-client_secret = config.SPOTIFY_CLIENT_SECRET
-if config.SPOTIFY_CLIENT_ID and config.SPOTIFY_CLIENT_SECRET:
-    client_credentials_manager = (
-        SpotifyClientCredentials(
-            client_id, client_secret
-                )
-            )
-spotify = spotipy.Spotify(
-    client_credentials_manager=client_credentials_manager
-)
+# client_id = config.SPOTIFY_CLIENT_ID
+# client_secret = config.SPOTIFY_CLIENT_SECRET
+# if config.SPOTIFY_CLIENT_ID and config.SPOTIFY_CLIENT_SECRET:
+#     client_credentials_manager = (
+#         SpotifyClientCredentials(
+#             client_id, client_secret
+#                 )
+#             )
+# spotify = spotipy.Spotify(
+#     client_credentials_manager=client_credentials_manager
+# )
 
-album = spotify.album("https://open.spotify.com/album/4013u1RNEHieH8NwnN0vNh?si=vBeC-Z3iTgaRYfTklulWTQ")
-albumName = album["name"]
-results = []
-songName = []
+# pl = spotify.playlist("https://open.spotify.com/playlist/041wvkYJ29WhIE4MaByjV7?si=8349baf138a042e6")
+# for i in pl["tracks"]["items"]:
+#     print(i)
+
 # imgUrl = album["album"]["images"][0]["url"]
-print(album["images"][1]["url"])
 # for item in album["tracks"]["items"]:
 #     print(item["images"])
     # info = item["name"]
@@ -93,3 +92,7 @@ print(album["images"][1]["url"])
 #         audiofile.initTag()
 #     audiofile.tag.images.set(ImageFrame.FRONT_COVER, open(mp3_path,'rb').read(), 'image/jpeg')
 #     audiofile.tag.save()
+
+x = [1,2,3,45]
+x.remove(3)
+print(x)
