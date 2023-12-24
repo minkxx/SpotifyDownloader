@@ -96,10 +96,10 @@ class songAPI:
                     yt = YouTube(youtube_url)
                     stream =  yt.streams.filter(abr="128kbps")[0]
                     stream.download(output_path=f"songs/{albumName}/")
+                    results.remove(i)
             afterDl(f"songs/{albumName}/")
             removeMp4(f"songs/{albumName}/")
         
-
     def downloadPlaylist(self, url):
         if self.checkUrl(url) != "playlist":
             print("Not a playlist")
@@ -108,8 +108,9 @@ class songAPI:
             playlistName = playlist["name"]
             results = []
             for item in playlist["tracks"]["items"]:
-                info = item["name"]
-                for artist in item["artists"]:
+                music_track = item["track"]
+                info = music_track["name"]
+                for artist in music_track["artists"]:
                     fetched = f' {artist["name"]}'
                     if "Various Artists" not in fetched:
                         info += fetched
@@ -123,6 +124,7 @@ class songAPI:
                     yt = YouTube(youtube_url)
                     stream =  yt.streams.filter(abr="128kbps")[0]
                     stream.download(output_path=f"songs/{playlistName}/")
+                    results.remove(i)
             afterDl(f"songs/{playlistName}/")
             removeMp4(f"songs/{playlistName}/")
 
