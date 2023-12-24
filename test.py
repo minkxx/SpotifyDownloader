@@ -42,19 +42,33 @@ from eyed3.id3.frames import ImageFrame
 #             os.remove(f"{file_path}{i}")
 
 
-# client_id = config.SPOTIFY_CLIENT_ID
-# client_secret = config.SPOTIFY_CLIENT_SECRET
-# if config.SPOTIFY_CLIENT_ID and config.SPOTIFY_CLIENT_SECRET:
-#     client_credentials_manager = (
-#         SpotifyClientCredentials(
-#             client_id, client_secret
-#                 )
-#             )
-# spotify = spotipy.Spotify(
-#     client_credentials_manager=client_credentials_manager
-# )
+client_id = config.SPOTIFY_CLIENT_ID
+client_secret = config.SPOTIFY_CLIENT_SECRET
+if config.SPOTIFY_CLIENT_ID and config.SPOTIFY_CLIENT_SECRET:
+    client_credentials_manager = (
+        SpotifyClientCredentials(
+            client_id, client_secret
+                )
+            )
+spotify = spotipy.Spotify(
+    client_credentials_manager=client_credentials_manager
+)
 
-# x = spotify.track("https://open.spotify.com/track/1XdUEm2MwB6ysy6E80ltMg?si=d7e24c8c057747e4")
+album = spotify.album("https://open.spotify.com/album/4013u1RNEHieH8NwnN0vNh?si=vBeC-Z3iTgaRYfTklulWTQ")
+albumName = album["name"]
+results = []
+songName = []
+# imgUrl = album["album"]["images"][0]["url"]
+print(album["images"][1]["url"])
+# for item in album["tracks"]["items"]:
+#     print(item["images"])
+    # info = item["name"]
+    # songName.append(info)
+    # for artist in item["artists"]:
+    #     fetched = f' {artist["name"]}'
+    #     if "Various Artists" not in fetched:
+    #         info += fetched
+    # results.append(info)
 # trackImg = x["album"]["images"][0]["url"]
 # trackName = x["name"]
 
@@ -79,7 +93,3 @@ from eyed3.id3.frames import ImageFrame
 #         audiofile.initTag()
 #     audiofile.tag.images.set(ImageFrame.FRONT_COVER, open(mp3_path,'rb').read(), 'image/jpeg')
 #     audiofile.tag.save()
-
-x = 'C:\\Users\\Admin\\Desktop\\python codes\\spotiDl\\songs/NO CAP (OFFICIAL VIDEO).mp4'
-y = x.split("\\")[-1].split(".")[0] + ".mp3"
-print(y)

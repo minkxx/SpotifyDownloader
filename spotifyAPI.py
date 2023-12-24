@@ -4,9 +4,6 @@ from pytube import Search
 from pytube import YouTube
 import os
 from moviepy.editor import *
-import urllib.request
-import eyed3
-from eyed3.id3.frames import ImageFrame
 
 import config
 
@@ -31,16 +28,6 @@ def removeMp4(file_path):
     for i in os.listdir(file_path):
         if str(i).endswith(".mp4"):
             os.remove(f"{file_path}{i}")
-
-def setTrackCover(img_path, mp3_path, trackName):
-    f = open(f"imgs/{trackName}.jpg",'wb')
-    f.write(urllib.request.urlopen(img_path).read())
-    f.close()
-    audiofile = eyed3.load("test/Despacito.mp3")
-    if (audiofile.tag == None):
-        audiofile.initTag()
-    audiofile.tag.images.set(ImageFrame.FRONT_COVER, open(mp3_path,'rb').read(), 'image/jpeg')
-    audiofile.tag.save()
 
 class songAPI:
     def __init__(self):    
@@ -70,9 +57,7 @@ class songAPI:
             print("Not a track")
         else:
             track = self.spotify.track(url)
-            trackName = track["name"]
             info = track["name"]
-            trackImg = track["album"]["images"][0]["url"]
             for artist in track["artists"]:
                 fetched = f' {artist["name"]}'
                 if "Various Artists" not in fetched:
@@ -84,11 +69,9 @@ class songAPI:
             youtube_url = f'https://www.youtube.com/watch?v={videoID}'
             yt = YouTube(youtube_url)
             stream =  yt.streams.filter(abr="128kbps")[0]
-            x = stream.download(output_path="songs/")
-            trackPath = x.split("\\")[-1].split(".")[0] + ".mp3"
+            stream.download(output_path="songs/")
             afterDl("songs/")
             removeMp4("songs/")
-            setTrackCover(trackImg, trackPath, trackName)
 
     def downloadAlbum(self, url):
         if self.checkUrl(url) != "album":
