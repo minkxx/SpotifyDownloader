@@ -1,14 +1,14 @@
-from pytube import YouTube, Search
-import os
-from moviepy.editor import *
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
+# from pytube import YouTube, Search
+# import os
+# from moviepy.editor import *
+# import spotipy
+# from spotipy.oauth2 import SpotifyClientCredentials
 
-import config
+# import config
 
-import urllib.request
-import eyed3
-from eyed3.id3.frames import ImageFrame
+# import urllib.request
+# import eyed3
+# from eyed3.id3.frames import ImageFrame
 
 # s = Search("No Cap krsna")
 # x = str(s.results[0]).split("=")
@@ -93,6 +93,20 @@ from eyed3.id3.frames import ImageFrame
 #     audiofile.tag.images.set(ImageFrame.FRONT_COVER, open(mp3_path,'rb').read(), 'image/jpeg')
 #     audiofile.tag.save()
 
-x = [1,2,3,45]
-x.remove(3)
-print(x)
+# from pySpotify import spotiSearch
+
+# SPOTIFY_CLIENT_ID = "580792a76dd44ddfbb8b6f0dfee6da42"
+# SPOTIFY_CLIENT_SECRET = "b9fc77e878914e559d6b33c22d3bcae9"
+
+# sClient = spotiSearch(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
+
+# x = sClient.getTrack("")
+# print(x)
+
+
+from pyYtDl import songDl, MP4ToMP3
+
+path = songDl("Despacito", "songs/testing/")
+MP4ToMP3(path)
+
+

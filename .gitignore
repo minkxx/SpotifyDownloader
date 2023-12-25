@@ -4,3 +4,7 @@ test/
 songs/
 imgs/
 *.cache
+pySpotify.py
+pyYtDl.py
+app.py
+spotifyDownloader.py
