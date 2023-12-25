@@ -1,9 +1,5 @@
 __pycache__/
 myenv/
-test/
 songs/
-imgs/
 *.cache
-pySpotify.py
-pyYtDl.py
-spotifyDownloader.py
+config.py
