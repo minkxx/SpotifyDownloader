@@ -10,3 +10,20 @@
 [![Size](https://img.shields.io/github/repo-size/minkxx/SpotifyDownloader?style=flat-square&color=green)](https://github.com/minkxx/SpotifyDownloader/)   
 [![Python](https://img.shields.io/badge/Python-v3.11.4-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-GPL-blue)](https://github.com/minkxx/SpotifyDownloader/blob/master/LICENSE) 
+
+## Install and run
+- Get your [Necessary Variables](#Necessary-Variables)
+- create a file `config.py` and store them
+- Clone the repository:    
+`git clone https://github.com/minkxx/SpotifyDownloader.git`
+- Go to the cloned folder:    
+`cd SpotifyDownloader`
+- Create a virtual env:      
+`virtualenv -p /usr/bin/python3 myenv`
+`. ./venv/bin/activate`
+- Install the requirements:      
+`pip(3) install -U -r requirements.txt`
+
+## Necessary Variables
+- `SPOTIFY_CLIENT_ID` - Spotify client_id. Get it from [here](https://developer.spotify.com/dashboard/)
+- `SPOTIFY_CLIENT_SECRET` - Spotify client_secret. Get it from [here](https://developer.spotify.com/dashboard/)
