@@ -12,18 +12,15 @@
 [![License](https://img.shields.io/badge/License-GPL-blue)](https://github.com/minkxx/SpotifyDownloader/blob/master/LICENSE) 
 
 ## Install and run
-- Get your [Necessary Variables](#Necessary-Variables)
-- create a file `config.py` and store them
 - Clone the repository:    
 `git clone https://github.com/minkxx/SpotifyDownloader.git`
 - Go to the cloned folder:    
 `cd SpotifyDownloader`
-- Create a virtual env:      
-`virtualenv -p /usr/bin/python3 myenv`
-`. ./venv/bin/activate`
+- Get your [Necessary Variables](#Necessary-Variables)
+- create a file `config.py` and store them
 - Install the requirements:      
 `pip(3) install -U -r requirements.txt`
-- Run the script and enter spotify track/album/playlist link to download on `songs/` folder
+- Run the script and enter spotify track/album/playlist link to download on `songs/` folder.
 - `pyhton spotifyDownloader.py`
 
 ## Necessary Variables
