@@ -17,11 +17,13 @@
 - Go to the cloned folder:    
 `cd SpotifyDownloader`
 - Get your [Necessary Variables](#Necessary-Variables)
-- create a file `config.py` and store them
+- Create a file `config.py` and store them:    
+`SPOTIFY_CLIENT_ID = "your client id"`
+`SPOTIFY_CLIENT_SECRET = "your client secret"`
 - Install the requirements:      
-`pip(3) install -U -r requirements.txt`
-- Run the script and enter spotify track/album/playlist link to download on `songs/` folder.
-- `pyhton spotifyDownloader.py`
+`pip install -U -r requirements.txt`
+- Run the script and enter spotify track/album/playlist link to download on `songs/` folder:    
+`pyhton spotifyDownloader.py`
 
 ## Necessary Variables
 - `SPOTIFY_CLIENT_ID` - Spotify client_id. Get it from [here](https://developer.spotify.com/dashboard/)
