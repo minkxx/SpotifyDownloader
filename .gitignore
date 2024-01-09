@@ -3,3 +3,4 @@ myenv/
 songs/
 *.cache
 config.py
+test.py

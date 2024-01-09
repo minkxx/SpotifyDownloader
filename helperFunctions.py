@@ -9,4 +9,5 @@ def MP4ToMP3(mp4_path:str):
     os.remove(mp4_path)
 
 def zip(zip_name:str, dir_path:str):
-    shutil.make_archive(zip_name, "zip", dir_path)
+    path = shutil.make_archive(zip_name, "zip", dir_path)
+    return path.split("\\")[-1]
