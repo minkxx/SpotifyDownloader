@@ -18,7 +18,6 @@ elif ("album" in (url.split("/"))) and (client.validUrl(url)):
         path = songDl(i, dir_path)
         MP4ToMP3(path)
     albumSongs.clear()
-    zip(albumName, dir_path)
 elif ("playlist" in (url.split("/")))and (client.validUrl(url)):
     playlistName, playlistSongs = client.getPlaylist(url)
     dir_path =  f"songs/{playlistName}/"
@@ -26,6 +25,5 @@ elif ("playlist" in (url.split("/")))and (client.validUrl(url)):
         path = songDl(j, dir_path)
         MP4ToMP3(path)
     playlistSongs.clear()
-    zip(playlistName, dir_path)
 else:
     print("Not a spotify link!")
