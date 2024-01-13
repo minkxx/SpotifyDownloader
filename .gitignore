@@ -1,6 +1,13 @@
+# ignoring folders
 __pycache__/
 myenv/
 songs/
+
+# ignoring file extensions
 *.cache
+*.zip
+
+# ignoring specific files
 config.py
 test.py
+test.txt

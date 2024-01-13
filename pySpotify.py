@@ -18,11 +18,12 @@ class spotiSearch:
         if ("track" in url.split("/")) and (self.validUrl(url)):
             track = self.spotify.track(url)
             info = track["name"]
+            cover_art_url = track["album"]["images"][0]["url"]
             for artist in track["artists"]:
                 fetched = f' {artist["name"]}'
                 if "Various Artists" not in fetched:
                     info += fetched
-            return info
+            return [info, cover_art_url]
         else:
             return "Not a valid spotify track"
         
@@ -38,9 +39,9 @@ class spotiSearch:
                     if "Various Artists" not in fetched:
                         info += fetched
                 results.append(info)
-            return albumName, results
+            return [albumName, results]
         else:
-            return "Not a valid spotify track", "Not a valid spotify track"
+            return "Not a valid spotify track"
         
     def getPlaylist(self, url:str):
         if ("playlist" in url.split("/")) and (self.validUrl(url)):
@@ -55,6 +56,6 @@ class spotiSearch:
                     if "Various Artists" not in fetched:
                         info += fetched
                 results.append(info)
-            return playlistName, results
+            return [playlistName, results]
         else:
-            return "Not a valid spotify track", "Not a valid spotify track"
+            return "Not a valid spotify track"
