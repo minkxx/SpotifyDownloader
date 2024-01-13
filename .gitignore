@@ -2,6 +2,7 @@
 __pycache__/
 myenv/
 songs/
+imgs/
 
 # ignoring file extensions
 *.cache
