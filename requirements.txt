@@ -1,3 +1,4 @@
 pytube
 spotdl
 moviepy
+eyed3

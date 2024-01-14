@@ -26,7 +26,7 @@ elif ("playlist" in (url.split("/")))and (client.validUrl(url)):
     playlist = client.getPlaylist(url)
     dir_path =  f"songs/{playlist[0]}/"
     for j in playlist[1]:
-        path = songDl(j, dir_path)
+        path = songDl(j[0], dir_path)
         MP4ToMP3(path)
     zip(playlist[0], dir_path)
 else:
