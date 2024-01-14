@@ -52,11 +52,12 @@ class spotiSearch:
             for item in playlist["tracks"]["items"]:
                 music_track = item["track"]
                 info = music_track["name"]
+                cover_art = music_track["album"]["images"][0]["url"]
                 for artist in music_track["artists"]:
                     fetched = f' {artist["name"]}'
                     if "Various Artists" not in fetched:
                         info += fetched
-                results.append(info)
+                results.append([info, cover_art])
             return [playlistName, results]
         else:
             return "Not a valid spotify track"
