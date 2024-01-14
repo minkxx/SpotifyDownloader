@@ -3,6 +3,7 @@ import requests
 from moviepy.editor import *
 import eyed3
 from eyed3.id3.frames import ImageFrame
+import os
 
 def MP4ToMP3(mp4_path:str):
     mp3_path = mp4_path.split(".")[0] + ".mp3"
@@ -17,6 +18,8 @@ def zip(zip_name:str, dir_path:str):
     return path.split("\\")[-1]
 
 def setCoverArt(track_name:str, img_url:str, mp3_path:str):
+    if not os.path.exists("imgs/"):
+        os.mkdir("imgs/")
     img_data = requests.get(img_url).content
     with open(f"imgs/{track_name}.png", 'wb') as f:
         f.write(img_data)
