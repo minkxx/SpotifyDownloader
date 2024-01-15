@@ -31,6 +31,7 @@ class spotiSearch:
         if ("album" in url.split("/")) and (self.validUrl(url)):
             album = self.spotify.album(url)
             albumName = album["name"]
+            cover_art_url = album["images"][0]["url"]
             results = []
             for item in album["tracks"]["items"]:
                 info = item["name"]
@@ -39,7 +40,7 @@ class spotiSearch:
                     if "Various Artists" not in fetched:
                         info += fetched
                 results.append(info)
-            return [albumName, results]
+            return [albumName, results, cover_art_url]
         else:
             return "Not a valid spotify track"
         

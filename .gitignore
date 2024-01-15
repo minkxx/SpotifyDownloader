@@ -7,6 +7,7 @@ imgs/
 # ignoring file extensions
 *.cache
 *.zip
+*.png
 
 # ignoring specific files
 config.py
