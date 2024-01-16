@@ -17,8 +17,9 @@ def zip(zip_name:str, dir_path:str):
     if not os.path.exists("zips/"):
         os.mkdir("zips/")
     x = shutil.make_archive(zip_name, "zip", dir_path)
-    os.rename(x, f"zips/{x}")
-    zip_path = f"zips/{x}"
+    y = r""+x.split("\\")[-1]
+    os.rename(y, f"zips/{y}")
+    zip_path = f"zips/{y}"
     return zip_path
 
 def setCoverArt(track_name:str, img_url:str, mp3_path:str):
