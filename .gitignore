@@ -3,6 +3,7 @@ __pycache__/
 myenv/
 songs/
 imgs/
+zips/
 
 # ignoring file extensions
 *.cache
