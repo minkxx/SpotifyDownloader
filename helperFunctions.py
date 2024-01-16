@@ -14,8 +14,12 @@ def MP4ToMP3(mp4_path:str):
     return mp3_path
 
 def zip(zip_name:str, dir_path:str):
-    path = shutil.make_archive(zip_name, "zip", dir_path)
-    return path.split("\\")[-1]
+    if not os.path.exists("zips/"):
+        os.mkdir("zips/")
+    x = shutil.make_archive(zip_name, "zip", dir_path)
+    os.rename(x, f"zips/{x}")
+    zip_path = f"zips/{x}"
+    return zip_path
 
 def setCoverArt(track_name:str, img_url:str, mp3_path:str):
     if not os.path.exists("imgs/"):
