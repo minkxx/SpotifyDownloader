@@ -2,13 +2,10 @@
 __pycache__/
 myenv/
 songs/
-imgs/
 zips/
 
 # ignoring file extensions
 *.cache
-*.zip
-*.png
 
 # ignoring specific files
 config.py
