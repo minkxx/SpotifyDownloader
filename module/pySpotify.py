@@ -18,7 +18,7 @@ class spotiSearch:
         if ("track" in url.split("/")) and (self.validUrl(url)):
             track = self.spotify.track(url)
             info = track["name"]
-            cover_art_url = track["album"]["images"][0]["url"]
+            cover_art_url = track["album"]["images"][2]["url"]
             for artist in track["artists"]:
                 fetched = f' {artist["name"]}'
                 if "Various Artists" not in fetched:
@@ -31,7 +31,7 @@ class spotiSearch:
         if ("album" in url.split("/")) and (self.validUrl(url)):
             album = self.spotify.album(url)
             albumName = album["name"]
-            cover_art_url = album["images"][0]["url"]
+            cover_art_url = album["images"][2]["url"]
             results = []
             for item in album["tracks"]["items"]:
                 info = item["name"]
@@ -52,7 +52,7 @@ class spotiSearch:
             for item in playlist["tracks"]["items"]:
                 music_track = item["track"]
                 info = music_track["name"]
-                cover_art = music_track["album"]["images"][0]["url"]
+                cover_art = music_track["album"]["images"][2]["url"]
                 for artist in music_track["artists"]:
                     fetched = f' {artist["name"]}'
                     if "Various Artists" not in fetched:
