@@ -1,6 +1,6 @@
-from pySpotify import spotiSearch
-from pyYtDl import songDl
-from helperFunctions import MP4ToMP3, setCoverArt, zip
+from module.pySpotify import spotiSearch
+from module.pyYtDl import songDl
+from module.helperFunctions import MP4ToMP3, setCoverArt, zip
 
 import config
 
