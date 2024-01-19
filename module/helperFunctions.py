@@ -22,14 +22,14 @@ def zip(zip_name:str, dir_path:str):
     zip_path = f"zips/{y}"
     return zip_path
 
-def setCoverArt(track_name:str, img_url:str, mp3_path:str):
-    if not os.path.exists("imgs/"):
-        os.mkdir("imgs/")
+def setCoverArt(image_name:str, img_url:str, mp3_path:str):
+    if not os.path.exists("songs/imgs/"):
+        os.mkdir("songs/imgs/")
     img_data = requests.get(img_url).content
-    with open(f"imgs/{track_name}.png", 'wb') as f:
+    with open(f"songs/imgs/{image_name}.png", 'wb') as f:
         f.write(img_data)
 
-    img_path = f"imgs/{track_name}.png"
+    img_path = f"songs/imgs/{image_name}.png"
 
     audiofile = eyed3.load(mp3_path)
     if (audiofile.tag == None):
