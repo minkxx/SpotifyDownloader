@@ -23,7 +23,7 @@
 - Install the requirements:      
 `pip install -U -r requirements.txt`
 - Run the script and enter spotify track/album/playlist link to download on `songs/` folder:    
-`pyhton spotifyDownloader.py`
+`python spotifyDownloader.py`
 
 ## Necessary Variables
 - `SPOTIFY_CLIENT_ID` - Spotify client_id. Get it from [here](https://developer.spotify.com/dashboard/)
